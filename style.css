@@ -1,3 +1,13 @@
+body {
+    margin: 0px;
+
+    background: rgb(228, 219, 219);
+    background: radial-gradient(circle, rgba(228, 219, 219, 1) 0%, rgba(245, 241, 241, 1) 100%);
+    font-family: Impact, fantasy;
+}
+
+/* BUTTONS */
+
 .buttons {
     max-width: 1200px;
     margin: 0px auto;
@@ -8,8 +18,18 @@
 
 .butt {
     margin: 40px 28px;
-    width: 80px;
-    height: 40px;
+    padding: 0px 10px;
+    min-width: 100px;
+    min-height: 40px;
 
     border-radius: 8px;
+    background-color: rgb(245, 241, 241);
+    color: rgb(65, 63, 63);
+    border: 1px solid rgb(65, 63, 63);
+}
+
+.butt:hover {
+    background-color: rgb(65, 63, 63);
+    color: rgb(245, 241, 241);
+    border: 1px solid rgb(245, 241, 241);
 }
