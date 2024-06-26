@@ -3,7 +3,7 @@ Rock, paper, scissors game.
 
 **Link to Project:** https://maximilianovalle.github.io/rock-paper-scissors/
 
-![](demo.mp4)
+![](demo.gif)
 
 ## How It's Made
 
