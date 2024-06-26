@@ -3,6 +3,8 @@ Rock, paper, scissors game.
 
 **Link to Project:** https://maximilianovalle.github.io/rock-paper-scissors/
 
+![](demo.mp4)
+
 ## How It's Made
 
 **Tech Used:** HTML, CSS, Javascript
