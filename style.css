@@ -1,0 +1,15 @@
+.buttons {
+    max-width: 1200px;
+    margin: 0px auto;
+    /* flexbox */
+    display: flex;
+    justify-content: center;
+}
+
+.butt {
+    margin: 40px 28px;
+    width: 80px;
+    height: 40px;
+
+    border-radius: 8px;
+}
