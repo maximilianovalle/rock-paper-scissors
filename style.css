@@ -6,6 +6,17 @@ body {
     font-family: Impact, fantasy;
 }
 
+/* TITLE */
+
+.title {
+    margin: 0px;
+    margin-top: 20px;
+    
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+
 /* BUTTONS */
 
 .buttons {
@@ -17,7 +28,7 @@ body {
 }
 
 .butt {
-    margin: 40px 28px;
+    margin: 20px 28px 0px 0px;
     padding: 0px 10px;
     min-width: 100px;
     min-height: 40px;
