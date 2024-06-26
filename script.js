@@ -23,7 +23,7 @@ function games() {
 }
 
 function finalScore() {
-    alert("You: " + humanScore + ", Computer: " + compScore);
+    alert(winner() + "\nYou: " + humanScore + ", Computer: " + compScore);
     reset();
 }
 
@@ -33,7 +33,19 @@ function reset() {
     gameNum = 0;
 }
 
-// rock button
+function winner() {
+    if (humanScore > compScore) {
+        return "YOU WIN!";
+    }
+
+    else if (humanScore < compScore) {
+        return "YOU LOSE!";
+    }
+
+    return "YOU... TIED?";
+}
+
+// ROCK BUTTON
 
 function rock() {
     addGame();
@@ -60,7 +72,7 @@ function rock() {
     }
 }
 
-// paper button
+// PAPER BUTTON
 
 function paper() {
     addGame();
@@ -87,7 +99,7 @@ function paper() {
     }
 }
 
-// scissor button
+// SCISSOR BUTTON
 
 function scissors() {
     addGame();
@@ -114,7 +126,7 @@ function scissors() {
     }
 }
 
-// computer picks
+// COMPUTER PICKS
 
 function randomInt() {
     return Math.floor(Math.random() * 3) + 1; // returns a random num between 1-3
