@@ -24,7 +24,7 @@ function calculateGamesPlayed() {
     return false;
 }
 
-function finalScore() {
+function showFinalScore() {
     alert(getWinner() + "\nYou: " + humanScore + ", Computer: " + compScore);
     resetScores();
 }
@@ -51,7 +51,7 @@ function getWinner() {
 
 function rock() {
     addGame();
-    let comPick = computerChoice();
+    let comPick = pickComputerChoice();
 
     if (comPick == "paper") {
         addPointComp();
@@ -70,7 +70,7 @@ function rock() {
     // if 3 games reached
 
     if (!calculateGamesPlayed()) {
-        finalScore();
+        showFinalScore();
     }
 }
 
@@ -78,7 +78,7 @@ function rock() {
 
 function paper() {
     addGame();
-    let comPick = computerChoice();
+    let comPick = pickComputerChoice();
 
     if (comPick == "rock") {
         addPointHuman();
@@ -97,7 +97,7 @@ function paper() {
     // if 3 games reached
 
     if (!calculateGamesPlayed()) {
-        finalScore();
+        showFinalScore();
     }
 }
 
@@ -105,7 +105,7 @@ function paper() {
 
 function scissors() {
     addGame();
-    let comPick = computerChoice();
+    let comPick = pickComputerChoice();
 
     if (comPick == "rock") {
         addPointComp();
@@ -124,18 +124,18 @@ function scissors() {
     // if 3 games reached
 
     if (!calculateGamesPlayed()) {
-        finalScore();
+        showFinalScore();
     }
 }
 
 // COMPUTER PICKS
 
-function randomInt() {
+function getRandomInt() {
     return Math.floor(Math.random() * 3) + 1; // returns a random num between 1-3
 }
 
-function computerChoice() {
-    let randNum = randomInt();
+function pickComputerChoice() {
+    let randNum = getRandomInt();
 
     if (randNum == 1) {
         return "rock";
