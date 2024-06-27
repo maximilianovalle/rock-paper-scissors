@@ -1,3 +1,5 @@
+const GAME_ROUNDS = 3;
+
 let humanScore = 0;
 let compScore = 0;
 let gameNum = 0;
@@ -14,8 +16,8 @@ function addPointComp() {
     compScore++;
 }
 
-function games() {
-    if (gameNum < 3) {
+function calculateGamesPlayed() {
+    if (gameNum < GAME_ROUNDS) {
         return true;
     }
 
@@ -23,17 +25,17 @@ function games() {
 }
 
 function finalScore() {
-    alert(winner() + "\nYou: " + humanScore + ", Computer: " + compScore);
-    reset();
+    alert(getWinner() + "\nYou: " + humanScore + ", Computer: " + compScore);
+    resetScores();
 }
 
-function reset() {
+function resetScores() {
     humanScore = 0;
     compScore = 0;
     gameNum = 0;
 }
 
-function winner() {
+function getWinner() {
     if (humanScore > compScore) {
         return "YOU WIN!";
     }
@@ -67,7 +69,7 @@ function rock() {
 
     // if 3 games reached
 
-    if (gameNum >= 3) {
+    if (!calculateGamesPlayed()) {
         finalScore();
     }
 }
@@ -94,7 +96,7 @@ function paper() {
 
     // if 3 games reached
 
-    if (gameNum >= 3) {
+    if (!calculateGamesPlayed()) {
         finalScore();
     }
 }
@@ -121,7 +123,7 @@ function scissors() {
 
     // if 3 games reached
 
-    if (gameNum >= 3) {
+    if (!calculateGamesPlayed()) {
         finalScore();
     }
 }
