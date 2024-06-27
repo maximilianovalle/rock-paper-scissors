@@ -47,6 +47,13 @@ function getWinner() {
     return "YOU... TIED?";
 }
 
+// TESTING
+let myButt = document.getElementById("testButt");
+
+myButt.addEventListener("click", function() {
+    document.getElementById("gameplayText").innerText = "YAY!";
+})
+
 // ROCK BUTTON
 
 function rock() {

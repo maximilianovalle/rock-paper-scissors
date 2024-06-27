@@ -12,27 +12,20 @@ body {
     background: radial-gradient(circle, rgba(228, 219, 219, 1) 0%, rgba(245, 241, 241, 1) 100%);
 }
 
-/* TITLE */
-
-.title {
-    margin: 0px;
-    margin-top: 20px;
-    
-    text-align: center;
-    font-size: 24px;
-    font-weight: 500;
-}
-
 /* BUTTONS */
 
-.buttons {
+.gameBody {
     max-width: 1200px;
     min-height: 800px;
     margin: 0px auto;
     padding-top: 200px;
+}
+
+.buttons {
     /* flexbox */
     display: flex;
     justify-content: center;
+    margin-bottom: 80px;
 }
 
 .butt {
@@ -55,3 +48,6 @@ body {
     color: rgb(245, 241, 241);
     border: 1px solid rgb(245, 241, 241);
 }
+
+/* TEXT */
+
