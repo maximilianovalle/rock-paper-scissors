@@ -18,3 +18,5 @@ This step-by-step process was incredibly helpful. It broke down the problem I ha
 ## Lessons Learned:
 
 I learned that being a programmer is more than just writing lines of code. The main skill a programmer needs to have is problem solving. Writing code is secondary.
+
+I also learned the importance of writing clean code - mainly, naming functions and variables properly. A function's name should be an action denoting what the function itself does. For example, I had a function named games() that incremented my gameNum value by 1. The name didn't properly denote that, though, so I changed it to calculateGamesPlayed() which is much clearer.
