@@ -25,11 +25,8 @@ function getGamesPlayed() {
 }
 
 function showFinalScore() {
-    // alert(getWinner() + "\nYou: " + humanScore + ", Computer: " + compScore);
-
     let textChange = document.querySelector("#gameplayText");
-    let myString = getWinner() + "\nYou: " + humanScore + ", Computer: " + compScore;
-    textChange.textContent += " ... " + myString;
+    textChange.textContent += " ... " + getWinner() + "\nYou: " + humanScore + ", Computer: " + compScore;
 
     resetScores();
 }
@@ -54,7 +51,7 @@ function getWinner() {
 
 // CHANGE PAGE TEXT
 
-function changeText(changeTo, finalScore) {
+function changeText(changeTo) {
     let textChange = document.querySelector("#gameplayText");
     textChange.textContent = gameNum + ": " + changeTo;
 }
@@ -83,6 +80,7 @@ function rock() {
     }
 
     else {
+        changeScore();
         changeText("TIE - Computer chose ROCK.");
     }
 
@@ -112,6 +110,7 @@ function paper() {
     }
 
     else {
+        changeScore();
         changeText("TIE - Computer chose PAPER.");
     }
 
@@ -141,6 +140,7 @@ function scissors() {
     }
 
     else {
+        changeScore();
         changeText("TIE - Computer chose SCISSORS.");
     }
 
