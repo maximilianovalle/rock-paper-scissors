@@ -25,7 +25,12 @@ function getGamesPlayed() {
 }
 
 function showFinalScore() {
-    alert(getWinner() + "\nYou: " + humanScore + ", Computer: " + compScore);
+    // alert(getWinner() + "\nYou: " + humanScore + ", Computer: " + compScore);
+
+    let textChange = document.querySelector("#gameplayText");
+    let myString = getWinner() + "\nYou: " + humanScore + ", Computer: " + compScore;
+    textChange.textContent += " ... " + myString;
+
     resetScores();
 }
 
@@ -44,15 +49,20 @@ function getWinner() {
         return "YOU LOSE!";
     }
 
-    return "YOU... TIED?";
+    return "YOU... TIED!";
 }
 
-// TESTING
-let myButt = document.getElementById("testButt");
+// CHANGE PAGE TEXT
 
-myButt.addEventListener("click", function() {
-    document.getElementById("gameplayText").innerText = "YAY!";
-})
+function changeText(changeTo, finalScore) {
+    let textChange = document.querySelector("#gameplayText");
+    textChange.textContent = gameNum + ": " + changeTo;
+}
+
+function changeScore() {
+    let textChange = document.querySelector("#scoreboard");
+    textChange.textContent = humanScore + " - " + compScore;
+}
 
 // ROCK BUTTON
 
@@ -62,16 +72,18 @@ function rock() {
 
     if (comPick == "paper") {
         addPointComp();
-        alert("Computer chose PAPER. You lose.");
+        changeScore();
+        changeText("LOSS - Computer chose PAPER.");
     }
 
     else if (comPick == "scissors") {
         addPointHuman();
-        alert("Computer chose SCISSORS. You win.");
+        changeScore();
+        changeText("WIN - Computer chose SCISSORS.");
     }
 
     else {
-        alert("Computer chose ROCK. Tie.");
+        changeText("TIE - Computer chose ROCK.");
     }
 
     // if 3 games reached
@@ -89,16 +101,18 @@ function paper() {
 
     if (comPick == "rock") {
         addPointHuman();
-        alert("Computer chose ROCK. You win.");
+        changeScore();
+        changeText("WIN - Computer chose ROCK.");
     }
 
     else if (comPick == "scissors") {
         addPointComp();
-        alert("Computer chose SCISSORS. You lose.");
+        changeScore();
+        changeText("LOSS - Computer chose SCISSORS.")
     }
 
     else {
-    alert("Computer chose PAPER. Tie.");
+        changeText("TIE - Computer chose PAPER.");
     }
 
     // if 3 games reached
@@ -116,16 +130,18 @@ function scissors() {
 
     if (comPick == "rock") {
         addPointComp();
-        alert("Computer chose ROCK. You lose.");
+        changeScore();
+        changeText("LOSS - Computer chose ROCK.");
     }
 
     else if (comPick == "paper") {
         addPointHuman();
-        alert("Computer chose PAPER. You win.");
+        changeScore();
+        changeText("WIN - Computer chose PAPER.");
     }
 
     else {
-        return alert("Computer chose SCISSORS. Tie.");
+        changeText("TIE - Computer chose SCISSORS.");
     }
 
     // if 3 games reached
