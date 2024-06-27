@@ -16,7 +16,7 @@ function addPointComp() {
     compScore++;
 }
 
-function calculateGamesPlayed() {
+function getGamesPlayed() {
     if (gameNum < GAME_ROUNDS) {
         return true;
     }
@@ -51,7 +51,7 @@ function getWinner() {
 
 function rock() {
     addGame();
-    let comPick = pickComputerChoice();
+    let comPick = getComputerChoice();
 
     if (comPick == "paper") {
         addPointComp();
@@ -78,7 +78,7 @@ function rock() {
 
 function paper() {
     addGame();
-    let comPick = pickComputerChoice();
+    let comPick = getComputerChoice();
 
     if (comPick == "rock") {
         addPointHuman();
@@ -105,7 +105,7 @@ function paper() {
 
 function scissors() {
     addGame();
-    let comPick = pickComputerChoice();
+    let comPick = getComputerChoice();
 
     if (comPick == "rock") {
         addPointComp();
@@ -134,7 +134,7 @@ function getRandomInt() {
     return Math.floor(Math.random() * 3) + 1; // returns a random num between 1-3
 }
 
-function pickComputerChoice() {
+function getComputerChoice() {
     let randNum = getRandomInt();
 
     if (randNum == 1) {
