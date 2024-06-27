@@ -1,5 +1,12 @@
+@font-face {
+    font-family: Silkscreen;
+    src: url(slkscr.ttf) format('truetype');
+}
+
 body {
     margin: 0px;
+
+    font-family: 'Silkscreen';
 
     background: rgb(228, 219, 219);
     background: radial-gradient(circle, rgba(228, 219, 219, 1) 0%, rgba(245, 241, 241, 1) 100%);
@@ -20,7 +27,9 @@ body {
 
 .buttons {
     max-width: 1200px;
+    min-height: 800px;
     margin: 0px auto;
+    padding-top: 200px;
     /* flexbox */
     display: flex;
     justify-content: center;
@@ -30,10 +39,11 @@ body {
     margin: 20px 28px 0px 0px;
     padding: 0px 10px;
     min-width: 100px;
-    min-height: 40px;
+    height: 40px;
 
     font-size: 16px;
     font-weight: 500;
+    font-family: 'Silkscreen';
     border-radius: 8px;
     background-color: rgb(245, 241, 241);
     color: rgb(65, 63, 63);
