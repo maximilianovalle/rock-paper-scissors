@@ -69,7 +69,7 @@ function rock() {
 
     // if 3 games reached
 
-    if (!calculateGamesPlayed()) {
+    if (!getGamesPlayed()) {
         showFinalScore();
     }
 }
@@ -96,7 +96,7 @@ function paper() {
 
     // if 3 games reached
 
-    if (!calculateGamesPlayed()) {
+    if (!getGamesPlayed()) {
         showFinalScore();
     }
 }
@@ -123,7 +123,7 @@ function scissors() {
 
     // if 3 games reached
 
-    if (!calculateGamesPlayed()) {
+    if (!getGamesPlayed()) {
         showFinalScore();
     }
 }
