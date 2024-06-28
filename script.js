@@ -24,6 +24,14 @@ function getGamesPlayed() {
     return false;
 }
 
+function wonGame() {
+    if (humanScore == 2 || compScore == 2) {
+        return true;
+    }
+
+    return false;
+}
+
 function showFinalScore() {
     let textChange = document.querySelector("#gameplayText");
     textChange.textContent += " ... " + getWinner() + "\nYou: " + humanScore + ", Computer: " + compScore;
@@ -84,9 +92,13 @@ function rock() {
         changeText("TIE - Computer chose ROCK.");
     }
 
-    // if 3 games reached
+    // if 3 games reached or 2 points achieved
 
     if (!getGamesPlayed()) {
+        showFinalScore();
+    }
+
+    else if (wonGame() || wonGame()) {
         showFinalScore();
     }
 }
@@ -114,9 +126,9 @@ function paper() {
         changeText("TIE - Computer chose PAPER.");
     }
 
-    // if 3 games reached
+    // if 3 games reached or 2 points achieved
 
-    if (!getGamesPlayed()) {
+    if (!getGamesPlayed() || wonGame()) {
         showFinalScore();
     }
 }
@@ -144,9 +156,9 @@ function scissors() {
         changeText("TIE - Computer chose SCISSORS.");
     }
 
-    // if 3 games reached
+    // if 3 games reached or 2 points achieved
 
-    if (!getGamesPlayed()) {
+    if (!getGamesPlayed() || wonGame()) {
         showFinalScore();
     }
 }
