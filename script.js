@@ -1,3 +1,5 @@
+// SCORE FUNCTIONS
+
 const GAME_ROUNDS = 3;
 
 let humanScore = 0;
@@ -32,13 +34,6 @@ function wonGame() {
     return false;
 }
 
-function showFinalScore() {
-    let textChange = document.querySelector("#gameplayText");
-    textChange.textContent += " ... " + getWinner() + "\nYou: " + humanScore + ", Computer: " + compScore;
-
-    resetScores();
-}
-
 function resetScores() {
     humanScore = 0;
     compScore = 0;
@@ -69,6 +64,30 @@ function changeScore() {
     textChange.textContent = humanScore + " - " + compScore;
 }
 
+function changeGamesPlayed() {
+    let textChange = document.querySelector("#gamesPlayed");
+    textChange.textContent = "Games Played: " + gameNum + " / " + GAME_ROUNDS;
+}
+
+function showWinLoss() {
+    let textChange = document.querySelector("#winLossMssg");
+    textChange.textContent = getWinner();
+    document.getElementById("winLossMssg").style.visibility = "visible";
+
+    resetScores();
+}
+
+function hideWinLoss() {
+    document.getElementById("winLossMssg").style.visibility = "hidden";
+}
+
+function callTextChanges(changeTo) {
+    changeScore();
+    changeGamesPlayed();
+    hideWinLoss();
+    changeText(changeTo);
+}
+
 // ROCK BUTTON
 
 function rock() {
@@ -77,29 +96,22 @@ function rock() {
 
     if (comPick == "paper") {
         addPointComp();
-        changeScore();
-        changeText("LOSS - Computer chose PAPER.");
+        callTextChanges("LOSS - Computer chose PAPER.");
     }
 
     else if (comPick == "scissors") {
         addPointHuman();
-        changeScore();
-        changeText("WIN - Computer chose SCISSORS.");
+        callTextChanges("WIN - Computer chose SCISSORS.");
     }
 
     else {
-        changeScore();
-        changeText("TIE - Computer chose ROCK.");
+        callTextChanges("TIE - Computer chose ROCK.");
     }
 
     // if 3 games reached or 2 points achieved
 
-    if (!getGamesPlayed()) {
-        showFinalScore();
-    }
-
-    else if (wonGame() || wonGame()) {
-        showFinalScore();
+    if (!getGamesPlayed() || wonGame()) {
+        showWinLoss();
     }
 }
 
@@ -111,25 +123,22 @@ function paper() {
 
     if (comPick == "rock") {
         addPointHuman();
-        changeScore();
-        changeText("WIN - Computer chose ROCK.");
+        callTextChanges("WIN - Computer chose ROCK.");
     }
 
     else if (comPick == "scissors") {
         addPointComp();
-        changeScore();
-        changeText("LOSS - Computer chose SCISSORS.")
+        callTextChanges("LOSS - Computer chose SCISSORS.")
     }
 
     else {
-        changeScore();
-        changeText("TIE - Computer chose PAPER.");
+        callTextChanges("TIE - Computer chose PAPER.");
     }
 
     // if 3 games reached or 2 points achieved
 
     if (!getGamesPlayed() || wonGame()) {
-        showFinalScore();
+        showWinLoss();
     }
 }
 
@@ -141,25 +150,22 @@ function scissors() {
 
     if (comPick == "rock") {
         addPointComp();
-        changeScore();
-        changeText("LOSS - Computer chose ROCK.");
+        callTextChanges("LOSS - Computer chose ROCK.");
     }
 
     else if (comPick == "paper") {
         addPointHuman();
-        changeScore();
-        changeText("WIN - Computer chose PAPER.");
+        callTextChanges("WIN - Computer chose PAPER.");
     }
 
     else {
-        changeScore();
-        changeText("TIE - Computer chose SCISSORS.");
+        callTextChanges("TIE - Computer chose SCISSORS.");
     }
 
     // if 3 games reached or 2 points achieved
 
     if (!getGamesPlayed() || wonGame()) {
-        showFinalScore();
+        showWinLoss();
     }
 }
 

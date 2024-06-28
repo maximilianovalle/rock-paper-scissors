@@ -26,7 +26,6 @@ body {
     max-width: 1200px;
     min-height: 800px;
     margin: 0px auto;
-    padding-top: 200px;
 }
 
 .buttons {
@@ -59,3 +58,17 @@ body {
 
 /* TEXT */
 
+#gamesPlayed {
+    margin-top: 24px;
+    margin-bottom: 110px;
+
+    text-align: center;
+}
+
+#winLossMssg {
+    margin-bottom: 110px;
+
+    text-align: center;
+    font-size: 48px;
+    visibility: hidden;
+}
