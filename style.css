@@ -13,6 +13,24 @@ body {
     background: #363635;
 }
 
+@keyframes pulsateAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulsate {
+    animation: pulsateAnimation 2s ease 0s infinite normal forwards;
+}
+
 .center {
     /* flexbox */
     display: flex;
@@ -74,9 +92,14 @@ body {
 }
 
 #winLossMssg {
-    margin-bottom: 110px;
+    margin-bottom: 14px;
 
     color: #fff;
     text-align: center;
     font-size: 48px;
+}
+
+#playAgainMssg {
+    text-align: center;
+    margin-bottom: 100px;
 }

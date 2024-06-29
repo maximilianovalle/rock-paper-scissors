@@ -74,17 +74,29 @@ function showWinLoss() {
     textChange.textContent = getWinner();
     document.getElementById("winLossMssg").style.visibility = "visible";
 
+    showPlayAgain();
     resetScores();
+}
+
+function showPlayAgain() {
+    let textChange = document.querySelector("#playAgainMssg");
+    textChange.textContent = "Select paper, rock, or scissors to start a new game!";
+    document.getElementById("playAgainMssg").style.visibility = "visible";
 }
 
 function hideWinLoss() {
     document.getElementById("winLossMssg").style.visibility = "hidden";
 }
 
+function hidePlayAgain() {
+    document.getElementById("playAgainMssg").style.visibility = "hidden";
+}
+
 function callTextChanges(changeTo) {
     changeScore();
     changeGamesPlayed();
     hideWinLoss();
+    hidePlayAgain();
     changeText(changeTo);
 }
 
