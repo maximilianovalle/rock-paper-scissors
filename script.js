@@ -66,7 +66,7 @@ function changeScore() {
 
 function changeGamesPlayed() {
     let textChange = document.querySelector("#gamesPlayed");
-    textChange.textContent = "Games Played: " + gameNum + " / " + GAME_ROUNDS;
+    textChange.textContent = "Rounds: " + gameNum + " / " + GAME_ROUNDS;
 }
 
 function showWinLoss() {
