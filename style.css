@@ -8,9 +8,9 @@ body {
 
     font-family: 'Silkscreen';
     font-size: 16px;
-    color: #999898;
+    color: #f177a8;
 
-    background: #363635;
+    background: #241965;
 }
 
 @keyframes pulsateAnimation {
@@ -69,13 +69,13 @@ body {
     font-weight: 500;
     font-family: 'Silkscreen';
     border-radius: 8px;
-    background-color: #363635;
-    color: #fff;
-    border: 1px solid #4b4b4a;
+    background-color: #241965;
+    color: #ffac30;
+    border: 1px solid #9f4094;
 }
 
 .butt:hover {
-    background-color: #4b4b4a;
+    background-color: #9f4094;
 }
 
 /* TEXT */
@@ -87,14 +87,14 @@ body {
     padding: 12px 20px;
 
     border-radius: 8px;
-    background-color: #3d3d3c;
+    background-color: #653993;
     text-align: center;
 }
 
 #winLossMssg {
     margin-bottom: 14px;
 
-    color: #fff;
+    color: #ffac30;
     text-align: center;
     font-size: 48px;
 }
